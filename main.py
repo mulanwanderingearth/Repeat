@@ -1,6 +1,12 @@
 def first_uncommon(matrix, n):
     # Your implementation here!
-    pass
+    result ={}
+    for row in matrix:
+        for letter in row:
+            result[letter] = result.get(letter,0) + 1
+    for key,value in result.items():
+        if value<n:
+            return key
 
 matrix_1 = (
     ('u','e','r','e', ' ', 'e'),
